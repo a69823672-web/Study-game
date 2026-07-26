@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Quest</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+
+    <h1>🎮 Study Quest</h1>
+
+    <div class="stats">
+
+        <div class="card">
+            <span>⭐ XP</span>
+            <h2 id="xp">0</h2>
+        </div>
+
+        <div class="card">
+            <span>🏆 Level</span>
+            <h2 id="level">1</h2>
+        </div>
+
+        <div class="card">
+            <span>🪙 Coin</span>
+            <h2 id="coin">0</h2>
+        </div>
+
+    </div>
+
+    <div class="progress">
+
+        <div id="progressBar"></div>
+
+    </div>
+
+</header>
+
+
+<main>
+
+<section class="taskSection">
+
+<div class="title">
+
+<h2>📋 چالش‌های امروز</h2>
+
+<button id="openAddTask">
+
+➕ افزودن
+
+</button>
+
+</div>
+
+<div id="taskList"></div>
+
+</section>
+
+</main>
+
+
+<nav>
+
+<button id="homeBtn">
+
+🏠
+
+<span>خانه</span>
+
+</button>
+
+<button id="shopBtn">
+
+🛒
+
+<span>فروشگاه</span>
+
+</button>
+
+<button id="rewardBtn">
+
+🎁
+
+<span>جوایز</span>
+
+</button>
+
+<button id="settingBtn">
+
+⚙️
+
+<span>تنظیمات</span>
+
+</button>
+
+</nav>
+
+
+<!-- افزودن چالش -->
+
+<div class="modal" id="taskModal">
+
+<div class="modal-content">
+
+<h2>افزودن چالش</h2>
+
+<input
+type="text"
+id="taskName"
+placeholder="نام چالش">
+
+<input
+type="number"
+id="taskXP"
+placeholder="XP">
+
+<button id="saveTask">
+
+ذخیره
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- فروشگاه -->
+
+<div class="modal" id="shopModal">
+
+<div class="modal-content">
+
+<h2>
+
+🛒 فروشگاه
+
+</h2>
+
+<div id="shopItems">
+
+به‌زودی...
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- جوایز -->
+
+<div class="modal" id="rewardModal">
+
+<div class="modal-content">
+
+<h2>
+
+🎁 جوایز
+
+</h2>
+
+<div id="rewardItems">
+
+به‌زودی...
+
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- تنظیمات -->
+
+<div class="modal" id="settingModal">
+
+<div class="modal-content">
+
+<h2>
+
+⚙️ تنظیمات
+
+</h2>
+
+<button id="resetData">
+
+🗑 حذف اطلاعات
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<!-- انیمیشن XP -->
+
+<div id="xpAnimation"></div>
+
+<!-- انیمیشن Level Up -->
+
+<div id="levelAnimation">
+
+🏆 LEVEL UP
+
+</div>
+
+<!-- افکت Confetti -->
+
+<div id="confetti"></div>
+
+<!-- صدای دریافت XP -->
+
+<audio id="xpSound">
+
+<source src="xp.mp3" type="audio/mpeg">
+
+</audio>
+
+<!-- صدای Level Up -->
+
+<audio id="levelSound">
+
+<source src="levelup.mp3" type="audio/mpeg">
+
+</audio>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
