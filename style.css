@@ -1,0 +1,583 @@
+/* =========================
+   RESET
+========================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Vazirmatn',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#0b1020;
+    color:#fff;
+    min-height:100vh;
+    padding-bottom:90px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+header{
+
+    padding:25px;
+
+}
+
+header h1{
+
+    text-align:center;
+
+    font-size:34px;
+
+    font-weight:800;
+
+    color:#7c5cff;
+
+    margin-bottom:25px;
+
+}
+
+/* =========================
+   PLAYER STATS
+========================= */
+
+.stats{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:15px;
+
+}
+
+.card{
+
+    background:#171f36;
+
+    border-radius:20px;
+
+    padding:18px;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.35);
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 15px 35px rgba(124,92,255,.35);
+
+}
+
+.card span{
+
+    display:block;
+
+    color:#8fa1d8;
+
+    font-size:13px;
+
+}
+
+.card h2{
+
+    margin-top:10px;
+
+    font-size:28px;
+
+    color:#3fd6ff;
+
+}
+
+/* =========================
+   XP BAR
+========================= */
+
+.progress{
+
+    margin-top:25px;
+
+    width:100%;
+
+    height:16px;
+
+    background:#1d2745;
+
+    border-radius:50px;
+
+    overflow:hidden;
+
+}
+
+#progressBar{
+
+    width:0;
+
+    height:100%;
+
+    border-radius:50px;
+
+    background:
+    linear-gradient(
+    90deg,
+    #00d4ff,
+    #7c5cff,
+    #ff4fd8
+    );
+
+    transition:.6s;
+
+}
+
+/* =========================
+   TASKS
+========================= */
+
+.taskSection{
+
+    padding:20px;
+
+}
+
+.title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.title h2{
+
+    font-size:24px;
+
+}
+
+#openAddTask{
+
+    background:#7c5cff;
+
+    color:#fff;
+
+    border:none;
+
+    padding:12px 18px;
+
+    border-radius:15px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    transition:.3s;
+
+}
+
+#openAddTask:hover{
+
+    background:#6844ff;
+
+    transform:scale(1.05);
+
+}
+
+/* =========================
+   TASK CARD
+========================= */
+
+#taskList{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+
+}
+
+.task{
+
+    background:#171f36;
+
+    border-radius:18px;
+
+    padding:18px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:.3s;
+
+}
+
+.task:hover{
+
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 12px 25px rgba(0,0,0,.35);
+
+}
+
+.task h3{
+
+    margin-bottom:6px;
+
+    font-size:18px;
+
+}
+
+.task p{
+
+    color:#46dfff;
+
+    font-size:14px;
+
+}
+
+.doneBtn{
+
+    background:#22c55e;
+
+    color:#fff;
+
+    border:none;
+
+    padding:10px 18px;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.doneBtn:hover{
+
+    background:#16a34a;
+
+    transform:scale(1.05);
+
+}
+/* =========================
+   BOTTOM NAVIGATION
+========================= */
+
+nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    height:75px;
+    background:#11182d;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    border-top:1px solid rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    z-index:999;
+}
+
+nav button{
+    background:none;
+    border:none;
+    color:#8fa1d8;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    cursor:pointer;
+    transition:.3s;
+}
+
+nav button:hover{
+    color:#7c5cff;
+    transform:translateY(-4px);
+}
+
+nav button span{
+    margin-top:5px;
+    font-size:12px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.75);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    padding:20px;
+    z-index:1000;
+}
+
+.modal-content{
+    width:100%;
+    max-width:420px;
+    background:#171f36;
+    border-radius:24px;
+    padding:25px;
+    animation:popup .35s ease;
+}
+
+.modal-content h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.modal-content input{
+    width:100%;
+    margin-bottom:15px;
+    padding:14px;
+    border:none;
+    outline:none;
+    border-radius:14px;
+    background:#202b4a;
+    color:#fff;
+    font-size:15px;
+}
+
+.modal-content button{
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:14px;
+    background:#7c5cff;
+    color:white;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.modal-content button:hover{
+    background:#6844ff;
+}
+
+@keyframes popup{
+    from{
+        transform:scale(.7);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+/* =========================
+   XP ANIMATION
+========================= */
+
+#xpAnimation{
+    position:fixed;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+    font-size:42px;
+    font-weight:800;
+    color:#00ff99;
+    text-shadow:0 0 18px #00ff99;
+    pointer-events:none;
+    opacity:0;
+    z-index:3000;
+}
+
+#xpAnimation.show{
+    animation:gainXP 1.5s forwards;
+}
+
+@keyframes gainXP{
+
+    0%{
+        opacity:0;
+        transform:translate(-50%,40px) scale(.5);
+    }
+
+    20%{
+        opacity:1;
+        transform:translate(-50%,0) scale(1.3);
+    }
+
+    70%{
+        opacity:1;
+        transform:translate(-50%,-70px) scale(1);
+    }
+
+    100%{
+        opacity:0;
+        transform:translate(-50%,-120px) scale(.8);
+    }
+
+}
+
+/* =========================
+   LEVEL UP
+========================= */
+
+#levelAnimation{
+
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:60px;
+
+    font-weight:800;
+
+    color:#ffd700;
+
+    background:rgba(0,0,0,.65);
+
+    opacity:0;
+
+    pointer-events:none;
+
+    z-index:3500;
+
+}
+
+#levelAnimation.show{
+
+    animation:levelUp 2s forwards;
+
+}
+
+@keyframes levelUp{
+
+    0%{
+        opacity:0;
+        transform:scale(.5);
+    }
+
+    30%{
+        opacity:1;
+        transform:scale(1.2);
+    }
+
+    80%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:0;
+        transform:scale(1);
+    }
+
+}
+
+/* =========================
+   CONFETTI
+========================= */
+
+#confetti{
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    overflow:hidden;
+
+    z-index:3400;
+
+}
+
+.confetti{
+
+    position:absolute;
+
+    width:10px;
+
+    height:10px;
+
+    border-radius:50%;
+
+    animation:fall 3s linear forwards;
+
+}
+
+@keyframes fall{
+
+    from{
+
+        transform:translateY(-50px) rotate(0deg);
+
+        opacity:1;
+
+    }
+
+    to{
+
+        transform:translateY(110vh) rotate(720deg);
+
+        opacity:0;
+
+    }
+
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:28px;
+    }
+
+    .stats{
+        grid-template-columns:1fr;
+    }
+
+    .task{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
+
+    .doneBtn{
+        width:100%;
+    }
+
+    nav{
+        height:70px;
+    }
+
+}
